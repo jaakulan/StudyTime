@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "StudyTime",
+  "version": "0.1.0",
+  "description": "Create a better studying environment by blocking all of your procrastinations",
+
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "browser_action": {
+      "default_icon": "StudyTime_icon.png"
+    }
+}
