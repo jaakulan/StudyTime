@@ -48,6 +48,8 @@ function changingRestriction() {
         changeStream(!streamLockdown);
     }
 
+    console.log(newRestriction);
+
     return (
         <div className={styles.starter}>
             <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
@@ -55,8 +57,8 @@ function changingRestriction() {
             <hr className={styles.headerBreak}></hr>
 
             <div class="tab">
-              <button class="tablinks" onclick={changingRestriction}>New restriction preset</button>
-              <button class="tablinks" onclick={changingPreRestriction}>Previous presets</button>
+              <button class="tablinks" onClick={changingRestriction}>New restriction preset</button>
+              <button class="tablinks" onClick={changingPreRestriction}>Previous presets</button>
             </div>
 
             <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.show : styles.noShow}`}>
