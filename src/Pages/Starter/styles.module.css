@@ -13,9 +13,28 @@
     width: 200px;
 }
 
-.mainButtons {
-    padding-left: 160px;
-    padding-top: 20px;
+.btnContainer {
+    width: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.newRestrictionStyle{
+
+}
+
+.preRestrictionStyle{
+
+}
+
+.tab:hover {
+  color: yellow;
+}
+
+.btn {
+ width: 80%;
+ display: block;
+ height: 40px;
 }
 
 .header{
