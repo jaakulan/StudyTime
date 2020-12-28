@@ -14,7 +14,7 @@ const Starter = () => {
     const [preRestriction, changePreRestriction] = useState(false);
 
     document.body.style.backgroundColor = "white";
-function changingRestriction() {
+    function changingRestriction() {
         changeRestriction(true);
         changePreRestriction(false);
     }
