@@ -13,9 +13,8 @@ const Starter = () => {
     const [newRestriction, changeRestriction] = useState(true);
     const [preRestriction, changePreRestriction] = useState(false);
 
-    const streamingsites = ["https://www.youtube.com/"];
-
-    function changingRestriction() {
+    document.body.style.backgroundColor = "white";
+function changingRestriction() {
         changeRestriction(true);
         changePreRestriction(false);
     }
@@ -55,12 +54,13 @@ const Starter = () => {
             <h1 className={styles.header}>StudyTime</h1>
             <hr className={styles.headerBreak}></hr>
 
-            <div class="tabs">
-              <button className={styles.tab} onClick={changingRestriction}>New restriction preset</button>
-              <button className={styles.tab} onClick={changingPreRestriction}>Previous presets</button>
+            <div className={styles.tabs}>
+              <button className={styles.tab1} onClick={changingRestriction}>New restriction preset</button>
+              <button className={styles.tab2} onClick={changingPreRestriction}>Previous presets</button>
             </div>
 
-            <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.show : styles.noShow}`}>
+            <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.showleft : styles.noShow}`}>
+               <hr className={styles.headerUnderlineleft}></hr>
                <div className={styles.checklist}>
                    <button className={styles.items} onClick={changingKeyword}>Block by keywords</button>
                    <button className={styles.items} onClick={changingWebsite}>Block by websites</button>
@@ -70,16 +70,17 @@ const Starter = () => {
                    <button className={styles.items} onClick={changingStream}>Streaming Lockdown</button>
                </div>
                <div className={styles.btnContainer}>
-                   <button className={styles.btn}>Start studying</button>
-                   <button className={styles.btn}>Settings </button>
+                   <button className={styles.btnStart}>Start studying</button>
+                   <button className={styles.btnSettings}>Settings </button>
                </div>
             </div>
 
-            <div className={`${styles.preRestrictionStyle} ${preRestriction ? styles.show : styles.noShow}`}>
+            <div className={`${styles.preRestrictionStyle} ${preRestriction ? styles.showright : styles.noShow}`}>
+               <hr className={styles.headerUnderlineright}></hr>
                <h3> Not done yet </h3>
                <div className={styles.btnContainer}>
-                   <button className={styles.btn}>Start studying</button>
-                   <button className={styles.btn}>Settings </button>
+                   <button className={styles.btnStart}>Start studying</button>
+                   <button className={styles.btnSettings}>Settings </button>
                </div>
             </div>
 
