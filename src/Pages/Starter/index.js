@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import w3style from "../../w3.css"
 
 
 const Starter = () => {
