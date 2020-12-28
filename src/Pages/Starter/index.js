@@ -62,7 +62,7 @@ const Starter = () => {
             <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.showleft : styles.noShow}`}>
                <hr className={styles.headerUnderlineleft}></hr>
                <div className={styles.checklist}>
-                   <button className={styles.items} onClick={changingKeyword}>Block by keywords</button>
+                   <button className={styles.items} onClick={changingKeyword}><img src="StudyTime_icon.png" alt="logo" className={styles.buttonlogo}></img>Block by keywords</button>
                    <button className={styles.items} onClick={changingWebsite}>Block by websites</button>
                    <button className={styles.items} onClick={changingTotal}>Total Lockdown</button>
                    <button className={styles.items} onClick={changingGame}>Gaming Lockdown</button>
