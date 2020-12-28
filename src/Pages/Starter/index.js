@@ -1,12 +1,36 @@
 import React, { useState, useEffect } from "react";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
+
 
 const Starter = () => {
 
+    const [blockKeyword, changeKeyword] = useState(false);
+    const [blockWebsite, changeWebsite] = useState(false);
     const [totalLockdown, changeTotal] = useState(false);
     const [socialLockdown, changeSocial] = useState(false);
     const [gameLockdown, changeGame] = useState(false);
     const [streamLockdown, changeStream] = useState(false);
+    const [newRestriction, changeRestriction] = useState(false);
+    const [preRestriction, changePreRestriction] = useState(false);
+
+
+function changingRestriction() {
+        changeRestriction(true);
+        changePreRestriction(false);
+    }
+
+    function changingPreRestriction() {
+        changePreRestriction(true);
+        changeRestriction(false);
+    }
+
+    function changingKeyword() {
+        changeKeyword(!blockKeyword);
+    }
+
+    function changingWebsite() {
+        changeWebsite(!blockWebsite);
+    }
 
     function changingTotal() {
         changeTotal(!totalLockdown);
@@ -26,17 +50,38 @@ const Starter = () => {
 
     return (
         <div className={styles.starter}>
-            <h1 className={styles.title}>StudyTime</h1>
-            <div className={styles.checklist}>
-                <button className={styles.items} onClick={changingTotal}>Total Lockdown</button>
-                <button className={styles.items} onClick={changingGame}>Gaming Lockdown</button>
-                <button className={styles.items} onClick={changingSocial}>Social Media Lockdown</button>
-                <button className={styles.items} onClick={changingStream}>Streaming Lockdown</button>
+            <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
+            <h1 className={styles.header}>StudyTime</h1>
+            <hr className={styles.headerBreak}></hr>
+
+            <div class="tab">
+              <button class="tablinks" onclick={changingRestriction}>New restriction preset</button>
+              <button class="tablinks" onclick={changingPreRestriction}>Previous presets</button>
             </div>
-            <div className={styles.mainButtons}>
-                <button className={styles.start}>Start studying</button>
-                <button className={styles.settings}>Settings </button>
+
+            <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.show : styles.noShow}`}>
+               <div className={styles.checklist}>
+                   <button className={styles.items} onClick={changingKeyword}>Block by keywords</button>
+                   <button className={styles.items} onClick={changingWebsite}>Block by websites</button>
+                   <button className={styles.items} onClick={changingTotal}>Total Lockdown</button>
+                   <button className={styles.items} onClick={changingGame}>Gaming Lockdown</button>
+                   <button className={styles.items} onClick={changingSocial}>Social Media Lockdown</button>
+                   <button className={styles.items} onClick={changingStream}>Streaming Lockdown</button>
+               </div>
+               <div className={styles.mainButtons}>
+                   <button className={styles.start}>Start studying</button>
+                   <button className={styles.settings}>Settings </button>
+               </div>
             </div>
+
+            <div className={`${styles.preRestrictionStyle} ${preRestriction ? styles.show : styles.noShow}`}>
+               <h3> Not done yet </h3>
+               <div className={styles.mainButtons}>
+                   <button className={styles.start}>Start studying</button>
+                   <button className={styles.settings}>Settings </button>
+               </div>
+            </div>
+
         </div>
     )
 }

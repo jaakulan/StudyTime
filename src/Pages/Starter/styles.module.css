@@ -1,0 +1,62 @@
+.title {
+    text-align: center;
+}
+
+.checklist {
+    padding: 60px;
+    padding-left: 135px;
+}
+
+.items {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.mainButtons {
+    padding-left: 160px;
+    padding-top: 20px;
+}
+
+.header{
+    position: relative;
+    top: 20px;
+    left:10px;
+    font-size: 30px;
+}
+
+.headerBreak{
+  padding: 1px;
+  height: 10px;
+}
+
+.logo{
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.noTimer{
+  float: right;
+  width: 70px;
+  height: 70px;
+}
+
+.settings {
+    margin-left: 49px;
+}
+
+.headerBreak{
+  height:2px;
+  border-width: 0;
+  color:brown;
+  background-color: brown;
+}
+
+.show{
+  display: inherit;
+}
+
+.noshow{
+  display: none;
+}
