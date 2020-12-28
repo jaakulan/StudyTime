@@ -13,8 +13,9 @@ const Starter = () => {
     const [newRestriction, changeRestriction] = useState(true);
     const [preRestriction, changePreRestriction] = useState(false);
 
+    const streamingsites = ["https://www.youtube.com/"];
 
-function changingRestriction() {
+    function changingRestriction() {
         changeRestriction(true);
         changePreRestriction(false);
     }
