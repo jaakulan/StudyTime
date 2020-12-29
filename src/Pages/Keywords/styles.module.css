@@ -1,0 +1,190 @@
+.title {
+    text-align: center;
+}
+
+.checklist {
+    padding: 10px;
+    padding-bottom: 40px;
+}
+
+.items {
+    padding: 20px;
+    width: 101%;
+    height:90px;
+    line-height: 45px;
+    text-align: left;
+}
+
+.btnContainer {
+    width: 100%;
+}
+
+.tabs{
+  padding-top: 10px;
+  padding-left: 45px;
+}
+
+.tab1:hover {
+  color: rgb(255, 0, 0);
+}
+
+.tab2:hover {
+  color: rgb(255, 0, 0);
+}
+
+.tab1{
+  text-align: center;
+  width: 200px;
+  padding: 0;
+  line-height: 24px;
+  border: none;
+}
+
+.tab1:focus{
+  background-color:white;
+}
+
+.tab2:focus{
+  background-color: white;
+}
+
+.tab2{
+  text-align: center;
+  width:200px;
+  margin-left: 10px;
+  padding: 0;
+  line-height: 24px;
+  border: none;
+}
+
+.btnStart {
+ width: 100%;
+ background-color: brown;
+ border-radius: 25px;
+ padding: 15px;
+ font-weight: bold;
+}
+
+.btnSettings{
+ margin-left: 40%;
+ margin-top: 10px;
+ width: 20%;
+ border-radius: 25px;
+ background-color: rgb(187, 187, 187);
+}
+
+.btnStart:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.btnSettings:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.items:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.header{
+    position: relative;
+    top: 20px;
+    left:10px;
+    font-size: 30px;
+}
+
+.headerBreak{
+  padding: 1px;
+  height: 10px;
+}
+
+.logo{
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.noTimer{
+  float: right;
+  width: 70px;
+  height: 70px;
+}
+
+.settings {
+    margin-left: 49px;
+}
+
+.headerBreak{
+  height:2px;
+  border-width: 0;
+  color:brown;
+  background-color: brown;
+}
+
+.showleft{
+  display: inherit;
+  animation-duration: 1s;
+  animation-name: slideinleft;
+}
+
+.showright{
+  display: inherit;
+  animation-duration: 1s;
+  animation-name: slideinright;
+}
+
+.noShow{
+  display: none;
+}
+
+.headerUnderlineleft{
+  height:2px;
+  border-width: 0;
+  color:brown;
+  background-color: brown;
+  width: 180px;
+  margin-left: 55px;
+}
+
+.headerUnderlineright{
+  height:2px;
+  border-width: 0;
+  color:brown;
+  background-color: brown;
+  width: 180px;
+  margin-right: 55px;
+}
+
+@keyframes slideinleft {
+  from {
+    margin-left: 40%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slideinright {
+  from {
+    margin-right: 40%;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
+
+.buttonlogo {
+  float: left;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  padding-right: 25px;
+}
+
+.rightChevron {
+  float:right;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+}
