@@ -19,6 +19,23 @@
   height: 70px;
 }
 
+.pagelogo{
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 185px;
+}
+
+.websitesPNG{
+  padding-top: 30px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
 .greeting{
   position: middle;
   padding-top: 20px;
@@ -80,13 +97,4 @@ label {
 
 .back:hover{
   background-color:rgb(185, 192, 185);
-}
-
-.pagelogo{
-  width: 200px;
-  height: 200px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-left: 160px;
 }
