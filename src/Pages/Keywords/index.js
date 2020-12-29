@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 const Keywords = () => {
 
     document.body.style.backgroundColor = "white";
+    console.log("hello");
 
     return (
         <div className={styles.starter}>
