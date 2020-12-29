@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
 
-const Starter = () => {
+const Keywords = () => {
 
     document.body.style.backgroundColor = "white";
 
