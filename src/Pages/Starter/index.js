@@ -62,12 +62,12 @@ const Starter = () => {
             <div className={`${styles.newRestrictionStyle} ${newRestriction ? styles.showleft : styles.noShow}`}>
                <hr className={styles.headerUnderlineleft}></hr>
                <div className={styles.checklist}>
-                   <button className={styles.items} onClick={changingKeyword}><img src="StudyTime_icon.png" alt="logo" className={styles.buttonlogo}></img>Block by keywords</button>
-                   <button className={styles.items} onClick={changingWebsite}>Block by websites</button>
-                   <button className={styles.items} onClick={changingTotal}>Total Lockdown</button>
-                   <button className={styles.items} onClick={changingGame}>Gaming Lockdown</button>
-                   <button className={styles.items} onClick={changingSocial}>Social Media Lockdown</button>
-                   <button className={styles.items} onClick={changingStream}>Streaming Lockdown</button>
+                   <button className={styles.items} onClick={changingKeyword}><img src="/icons/keyword_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Block by keywords</button>
+                   <button className={styles.items} onClick={changingWebsite}><img src="/icons/url_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Block by websites</button>
+                   <button className={styles.items} onClick={changingTotal}><img src="/icons/totalLockdown_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Total Lockdown</button>
+                   <button className={styles.items} onClick={changingGame}><img src="/icons/gamingLockdown_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Gaming Lockdown</button>
+                   <button className={styles.items} onClick={changingSocial}><img src="/icons/socialLockdown_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Social Media Lockdown</button>
+                   <button className={styles.items} onClick={changingStream}><img src="/icons/streamLockdown_inactive.png" alt="ButtonLogo" className={styles.buttonlogo}></img><img src="/icons/chevron_right.png" alt="arrow" className={styles.rightChevron}></img>Streaming Lockdown</button>
                </div>
                <div className={styles.btnContainer}>
                    <button className={styles.btnStart}>Start studying</button>

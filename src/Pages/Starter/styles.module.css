@@ -10,8 +10,9 @@
 .items {
     padding: 20px;
     width: 101%;
+    height:90px;
+    line-height: 45px;
     text-align: left;
-
 }
 
 .btnContainer {
@@ -174,5 +175,16 @@
 }
 
 .buttonlogo {
-  float: right;
+  float: left;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  padding-right: 25px;
+}
+
+.rightChevron {
+  float:right;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
 }
