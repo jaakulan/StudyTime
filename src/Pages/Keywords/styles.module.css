@@ -36,7 +36,7 @@
   padding-top: 15px;
 }
 
-input[type=submit] {
+.block{
   background-color: rgb(180, 43, 43);
   color: white;
   padding: 12px 221px;
@@ -47,27 +47,8 @@ input[type=submit] {
   width: 100%;
 }
 
-input[type=submit]:hover {
+.block:hover {
   background-color: brown;
-}
-
-input[type=text], select, textarea {
-  width: 98%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 10%;
-  transition: padding 0.4s ease-in-out;
-  padding-bottom:200px;
-}
-
-input[type=text]:focus {
-  padding-bottom: 500px;
-}
-
-label {
-  padding: 12px 12px 32px 10px;
-  font-size: 20px;
-  display: inline-block;
 }
 
 .back{
@@ -90,3 +71,63 @@ label {
   margin-right: auto;
   margin-left: 160px;
 }
+
+.addBtn{
+  margin-left: 34%;
+  margin-top: 10px;
+  width: 40%;
+  border-radius: 25px;
+  background-color: rgb(215, 223, 215);
+}
+
+.enterBox{
+
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  transition: width 0.4s ease-in-out;
+}
+
+
+/*************submitbox************/
+
+/* Style the list items */
+ul li {
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+.close {
+  position: absolute;
+  margin-left: 100px;
+  float: right;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+
