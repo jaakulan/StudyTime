@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import keyword_inactive from "./icons/keyword_inactive.png";
 import url_inactive from "./icons/url_inactive.png";
@@ -10,7 +11,7 @@ import chevron_right from "./icons/chevron_right.png";
 
 
 
-const Starter = () => {
+const Starter = (props) => {
 
     const [blockKeyword, changeKeyword] = useState(false);
     const [blockWebsite, changeWebsite] = useState(false);
@@ -20,6 +21,8 @@ const Starter = () => {
     const [streamLockdown, changeStream] = useState(false);
     const [newRestriction, changeRestriction] = useState(true);
     const [preRestriction, changePreRestriction] = useState(false);
+
+    const { history } = props;
 
     document.body.style.backgroundColor = "white";
     function changingRestriction() {
@@ -34,26 +37,32 @@ const Starter = () => {
 
     function changingKeyword() {
         changeKeyword(!blockKeyword);
+        history.push('/keywords');
     }
 
     function changingWebsite() {
         changeWebsite(!blockWebsite);
+        history.push('/Websites');
     }
 
     function changingTotal() {
         changeTotal(!totalLockdown);
+        history.push('/TotalLD');
     }
 
     function changingSocial() {
         changeSocial(!socialLockdown);
+        history.push('/SocialLD');
     }
 
     function changingGame() {
         changeGame(!gameLockdown);
+        history.push('GamingLD');
     }
 
     function changingStream() {
         changeStream(!streamLockdown);
+        history.push('StreamLD');
     }
 
     return (
