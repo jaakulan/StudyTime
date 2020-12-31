@@ -7,41 +7,34 @@ const Keywords = () => {
 
     document.body.style.backgroundColor = "white";
 
-    var myNodelist = document.getElementsByTagName("LI");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      myNodelist[i].appendChild(span);
-    }
-
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
+    function addAllItems(){
+      var allKeywords = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < allKeywords.length; i++) {
         var div = this.parentElement;
-        div.style.display = "none";
+        if(div.style.display!=="none"){
+          /**add it to storage */
+        }
       }
     }
-
     function newElement(){
+      var i;
+      var close = document.getElementsByClassName("close");
       var li = document.createElement("li");
       var inputValue = document.getElementById("myInput").value;
       var t = document.createTextNode(inputValue);
       li.appendChild(t);
       if (inputValue === '') {
-        alert("You must write something!");
+        alert("You did not write a keyword!");
       } else {
         document.getElementById("blockedList").appendChild(li);
       }
       document.getElementById("myInput").value = "";
-      var span = document.createElement("SPAN");
+      var button = document.createElement("BUTTON");
       var txt = document.createTextNode("X");
-      span.className = "close";
-      span.appendChild(txt);
-      li.appendChild(span);
+      button.className = "close";
+      button.appendChild(txt);
+      li.appendChild(button);
 
       for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
@@ -58,13 +51,18 @@ const Keywords = () => {
             <hr className={styles.headerBreak}></hr>
             <img src={keyword_active} alt="logo" className={styles.pagelogo}></img>
             <h2>Any keywords entered here will block websites which contain them. Please enter all keywords you want blocked using comma's or whitespaces to seperate them:</h2>
-              <div id="myDIV">
+            <div id="queryContainer" className = {styles.queryContainer}>
+              <div className="addBox">
                 <input type="text" id="myInput" placeholder="Enter words here..."></input>
                 <button onClick={newElement} className={styles.addBtn}>Add this</button>
               </div>
 
+              <div className="blocked">
               <ul id="blockedList">
+                
               </ul>
+              </div>
+            </div>
 
               <div className={styles.submitContainer}>
                <button className={styles.block}>"Block these!"</button>
