@@ -8,10 +8,9 @@ const Keywords = () => {
     document.body.style.backgroundColor = "white";
 
     function addAllItems(){
-      var allKeywords = document.getElementsByClassName("close");
+      var allKeywords = document.getElementsByTag("LI");
       var i;
       for (i = 0; i < allKeywords.length; i++) {
-        var div = this.parentElement;
         if(div.style.display!=="none"){
           /**add it to storage */
         }
