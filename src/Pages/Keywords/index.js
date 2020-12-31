@@ -7,15 +7,16 @@ const Keywords = () => {
 
     document.body.style.backgroundColor = "white";
 
-    function addAllItems(){
+    /*function addAllItems(){
       var allKeywords = document.getElementsByTag("LI");
       var i;
       for (i = 0; i < allKeywords.length; i++) {
         if(div.style.display!=="none"){
-          /**add it to storage */
+          /**add it to storage
         }
       }
-    }
+    }*/
+
     function newElement(){
       var i;
       var close = document.getElementsByClassName("close");
