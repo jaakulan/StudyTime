@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import BlockElement from "../../Components/BlockElement"
 import keyword_active from "./icons/keyword_active.png";
 
 
 const Keywords = () => {
 
     document.body.style.backgroundColor = "white";
+
+    if (localStorage.getItem("keywords") === null) {
+      localStorage.setItem("keywords",[]);
+    }
+
+    const [keywordArray, changeKeywords] = useState(localStorage.getItem("keywords").split(","));
+    const [inputWord, changeInput] = useState("");
 
     /*function addAllItems(){
       var allKeywords = document.getElementsByTag("LI");
@@ -17,6 +25,25 @@ const Keywords = () => {
       }
     }*/
 
+    function toggleInputChange(e) {
+      changeInput(e.target.value);
+      console.log(inputWord);
+    }
+
+    function addElement() {
+      //adds word to state for frontend
+      var keywordsList = keywordArray;
+      keywordsList.push(inputWord);
+      changeKeywords(keywordsList);
+
+      //adds word to localstorage for storage in backend
+      var keywordsLocal = localStorage.getItem("keywords") + "," + inputWord;
+      localStorage.setItem("keywords", keywordsLocal);
+
+      changeInput("");
+    }
+
+    /*
     function newElement(){
       var i;
       var close = document.getElementsByClassName("close");
@@ -43,6 +70,7 @@ const Keywords = () => {
         }
       }
     }
+    */
 
     return (
         <div className={styles.starter}>
@@ -53,14 +81,14 @@ const Keywords = () => {
             <h2>Any keywords entered here will block websites which contain them. Please enter all keywords you want blocked using comma's or whitespaces to seperate them:</h2>
             <div id="queryContainer" className = {styles.queryContainer}>
               <div className="addBox">
-                <input type="text" id="myInput" placeholder="Enter words here..."></input>
-                <button onClick={newElement} className={styles.addBtn}>Add this</button>
+                <input type="text" id="myInput" onChange={toggleInputChange} placeholder="Enter words here..."></input>
+                <button onClick={addElement} className={styles.addBtn}>Add this</button>
               </div>
 
               <div className="blocked">
-              <ul id="blockedList">
-                
-              </ul>
+                {keywordArray.map((value, index) =>
+                  <BlockElement value={value} type={"keywords"}/>
+                )}
               </div>
             </div>
 

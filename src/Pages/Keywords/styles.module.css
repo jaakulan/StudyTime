@@ -80,16 +80,13 @@
   background-color: rgb(215, 223, 215);
 }
 
-.enterBox{
 
-}
-
-input[type=text] {
+/*input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-}
+}*/
 
 
 /*************submitbox************/
