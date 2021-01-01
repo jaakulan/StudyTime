@@ -32,9 +32,9 @@ const Keywords = () => {
 
     function addElement() {
       //adds word to state for frontend
-      var keywordsList = keywordArray;
-      keywordsList.push(inputWord);
-      changeKeywords(keywordsList);
+      var keywordsList = keywordArray; //make alias (can't change keyword Array directly because its array)
+      keywordsList.push(inputWord); //push new word to alias
+      changeKeywords(keywordsList); //use changeKeywords function which is defined above (line 15) to change the state of keywordArray to whatever is in brackets.
 
       //adds word to localstorage for storage in backend
       var keywordsLocal = localStorage.getItem("keywords") + "," + inputWord;
