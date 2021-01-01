@@ -5,6 +5,12 @@ const BlockElement = (props) => {
 
     const [show, changeShow] = useState(true);
 
+    useEffect(() => {
+        if (props.value === "") {
+            changeShow(false);
+        }
+    })
+
     function removeElement() {
         var keywords = localStorage.getItem("keywords").split(",");
         const length = keywords.length;
