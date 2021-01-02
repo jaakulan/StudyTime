@@ -6,6 +6,32 @@ const SocialLD = () => {
 
     document.body.style.backgroundColor = "white";
 
+    const [blockButton, changeButton] = useState("Block These!");
+    const socialString = "https://www.facebook.com/, https://www.instagram.com/, https://discord.com/";
+
+    if (localStorage.getItem("social") === null) {
+        localStorage.setItem("social", "");
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("social") !== "") {
+            changeButton("Unblock These!");
+        } else {
+            changeButton("Block These!");
+        }
+    })
+
+    function changeSocial(e) {
+        e.preventDefault();
+        if (localStorage.getItem("social") === "") {
+            localStorage.setItem("social", socialString);
+            changeButton("Unblock These!");
+        } else {
+            localStorage.setItem("social", "");
+            changeButton("Block These!");
+        }
+    }
+
     return (
         <div className={styles.starter}>
             <form action="/">
@@ -29,7 +55,7 @@ const SocialLD = () => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value="Block these!"></input>
+                    <input type="submit" value={blockButton} onClick={changeSocial}></input>
                 </div>
             </form>
             <button className={styles.back}>Nevermind, Take me Back!</button>
