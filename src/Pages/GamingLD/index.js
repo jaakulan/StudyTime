@@ -7,6 +7,31 @@ const GamingLD = () => {
 
     document.body.style.backgroundColor = "white";
 
+    const [blockButton, changeButton] = useState("Block These!");
+    const gamingString = "gaming,game,games,Gaming,Games,Game";
+
+    if (localStorage.getItem("gaming") === null) {
+        localStorage.setItem("gaming", "");
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("gaming") !== "") {
+            changeButton("Unblock These!");
+        } else {
+            changeButton("Block These!");
+        }
+    })
+
+    function changeGaming(e) {
+        e.preventDefault();
+        if (localStorage.getItem("gaming") === "") {
+            localStorage.setItem("gaming", gamingString);
+            changeButton("Unblock These!");
+        } else {
+            localStorage.setItem("gaming", "");
+            changeButton("Block These!");
+        }
+    }
     return (
         <div className={styles.starter}>
             <form action="/">
@@ -30,7 +55,7 @@ const GamingLD = () => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value="Block these!"></input>
+                    <input type="submit" value={blockButton} onClick={changeGaming}></input>
                 </div>
             </form>
             <button className={styles.back}>Nevermind, Take me Back!</button>

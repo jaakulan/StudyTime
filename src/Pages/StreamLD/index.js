@@ -5,6 +5,32 @@ import streamLockdown_active from "./icons/streamLockdown_active.png";
 const StreamLD = () => {
 
     document.body.style.backgroundColor = "white";
+    
+    const [blockButton, changeButton] = useState("Block These!");
+    const streamString = "https://www.youtube.com/,https://www.dailymotion.com/ca,https://vimeo.com/";
+
+    if (localStorage.getItem("stream") === null) {
+        localStorage.setItem("stream", "");
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("stream") !== "") {
+            changeButton("Unblock These!");
+        } else {
+            changeButton("Block These!");
+        }
+    })
+
+    function changeStream(e) {
+        e.preventDefault();
+        if (localStorage.getItem("stream") === "") {
+            localStorage.setItem("stream", streamString);
+            changeButton("Unblock These!");
+        } else {
+            localStorage.setItem("stream", "");
+            changeButton("Block These!");
+        }
+    }
 
     return (
         <div className={styles.starter}>
@@ -36,7 +62,7 @@ const StreamLD = () => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value="Block these!"></input>
+                    <input type="submit" value={blockButton} onClick={changeStream}></input>
                 </div>
             </form>
             <button className={styles.back}>Nevermind, Take me Back!</button>

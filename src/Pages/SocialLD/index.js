@@ -7,7 +7,8 @@ const SocialLD = () => {
     document.body.style.backgroundColor = "white";
 
     const [blockButton, changeButton] = useState("Block These!");
-    const socialString = "https://www.facebook.com/, https://www.instagram.com/, https://discord.com/";
+    //string to be sent to localStorage. Note that comma seperated but no spaces after comma
+    const socialString = "https://www.facebook.com/,https://www.instagram.com/,https://discord.com/";
 
     if (localStorage.getItem("social") === null) {
         localStorage.setItem("social", "");
