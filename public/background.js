@@ -1,4 +1,4 @@
-//BLOCK WORDS
+/*//BLOCK WORDS
 findString = function findText(text) {
     if(window.find(text)){
       document.documentElement.innerHTML = '';
@@ -25,4 +25,8 @@ findAllURL = function changeAllURL(text){
       document.documentElement.innerHTML = 'Domain is blocked';
       document.documentElement.scrollTop = 0;
     }
-}
+} */
+
+chrome.webNavigation.onCompleted.addListener(function() {
+  alert("This is my favorite website!");
+}, {url: [{urlMatches : '.*'}]});
