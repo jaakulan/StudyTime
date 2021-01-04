@@ -1,4 +1,4 @@
-/*//BLOCK WORDS
+//BLOCK WORDS
 findString = function findText(text) {
     if(window.find(text)){
       document.documentElement.innerHTML = '';
@@ -25,8 +25,18 @@ findAllURL = function changeAllURL(text){
       document.documentElement.innerHTML = 'Domain is blocked';
       document.documentElement.scrollTop = 0;
     }
-} */
+}
 
 chrome.webNavigation.onCompleted.addListener(function() {
-  alert("This is my favorite website!");
+  if (localStorage.getItem("stream") !== "") {
+    const stream = localStorage.getItem("stream").split(",");
+    const current = window.location.href;
+    const length = stream.length;
+    for (let i = 0; i < length; i++) {
+      if (stream[i] === current) {
+        alert("Distraction Alert");
+        findAllURL(current);
+      }
+    }
+  }
 }, {url: [{urlMatches : '.*'}]});
