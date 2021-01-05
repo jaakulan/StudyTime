@@ -8,7 +8,7 @@ const SocialLD = () => {
 
     const [blockButton, changeButton] = useState("Block These!");
     //string to be sent to localStorage. Note that comma seperated but no spaces after comma
-    const socialString = "https://www.facebook.com/,https://www.instagram.com/,https://discord.com/";
+    const socialString = "https://www.facebook.com/,https://www.instagram.com/,https://discord.com/,https://web.whatsapp.com/";
 
     if (localStorage.getItem("social") === null) {
         localStorage.setItem("social", "");
@@ -31,11 +31,11 @@ const SocialLD = () => {
             localStorage.setItem("social", "");
             changeButton("Block These!");
         }
+        window.location.href = "/";
     }
 
     return (
         <div className={styles.starter}>
-            <form action="/">
                 <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
                 <h1 className={styles.header}>StudyTime</h1>
                 <hr className={styles.headerBreak}></hr>
@@ -48,7 +48,6 @@ const SocialLD = () => {
                     <ul className={styles.blocked}>
                         <li>Facebook</li>
                         <li>Instagram</li>
-                        <li>Snapchat</li>
                         <li>Discord</li>
                         <li>Messenger</li>
                         <li>Whatsapp</li>
@@ -58,8 +57,9 @@ const SocialLD = () => {
                 <div className={styles.submitContainer}>
                     <input type="submit" value={blockButton} onClick={changeSocial}></input>
                 </div>
-            </form>
+            <form action="/">
             <button className={styles.back}>Nevermind, Take me Back!</button>
+            </form>
         </div>
 
     )

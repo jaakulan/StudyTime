@@ -15,16 +15,6 @@ const Keywords = () => {
     const [keywordArray, changeKeywords] = useState(localStorage.getItem("keywords").split(","));
     const [inputWord, changeInput] = useState("");
 
-    /*function addAllItems(){
-      var allKeywords = document.getElementsByTag("LI");
-      var i;
-      for (i = 0; i < allKeywords.length; i++) {
-        if(div.style.display!=="none"){
-          /**add it to storage
-        }
-      }
-    }*/
-
     function toggleInputChange(e) {
       changeInput(e.target.value);
       console.log(inputWord);
@@ -48,34 +38,9 @@ const Keywords = () => {
       changeInput("");
     }
 
-    /*
-    function newElement(){
-      var i;
-      var close = document.getElementsByClassName("close");
-      var li = document.createElement("li");
-      var inputValue = document.getElementById("myInput").value;
-      var t = document.createTextNode(inputValue);
-      li.appendChild(t);
-      if (inputValue === '') {
-        alert("You did not write a keyword!");
-      } else {
-        document.getElementById("blockedList").appendChild(li);
-      }
-      document.getElementById("myInput").value = "";
-      var button = document.createElement("BUTTON");
-      var txt = document.createTextNode("X");
-      button.className = "close";
-      button.appendChild(txt);
-      li.appendChild(button);
-
-      for (i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
+    function goBack(){
+      window.location.href = "/";
     }
-    */
 
     return (
         <div className={styles.starter}>
@@ -98,9 +63,9 @@ const Keywords = () => {
             </div>
 
               <div className={styles.submitContainer}>
-               <button className={styles.block}>"Block these!"</button>
+               <button className={styles.block} onClick={goBack}>Block these!</button>
               </div>
-          <button className={styles.back}>Nevermind, Take me Back!</button>
+          <button className={styles.back} onClick={goBack}>Nevermind, Take me Back!</button>
         </div>
     )
 }

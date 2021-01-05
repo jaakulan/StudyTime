@@ -7,11 +7,9 @@ const StreamLD = () => {
     document.body.style.backgroundColor = "white";
     
     const [blockButton, changeButton] = useState("Block These!");
-    const streamString = "https://www.youtube.com/,https://www.dailymotion.com/ca,https://vimeo.com/";
+    const streamString = "stream,Stream,streams,Streams,streaming,Streaming,https://www.youtube.com/,https://www.dailymotion.com/ca,https://www.netflix.com/,https://www.hulu.com/,https://www.primevideo.com/,https://vimeo.com/,https://www.sling.com/,https://www.sho.com/,https://www.crave.ca/,https://www.crackle.com/,http://www.rogersondemand.com/,https://tubitv.com/";
 
-    if (localStorage.getItem("stream") === null) {
-        localStorage.setItem("stream", "");
-    }
+    
 
     useEffect(() => {
         if (localStorage.getItem("stream") !== "") {
@@ -30,11 +28,11 @@ const StreamLD = () => {
             localStorage.setItem("stream", "");
             changeButton("Block These!");
         }
+        window.location.href = "/";
     }
 
     return (
         <div className={styles.starter}>
-            <form action="/">
                 <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
                 <h1 className={styles.header}>StudyTime</h1>
                 <hr className={styles.headerBreak}></hr>
@@ -56,7 +54,6 @@ const StreamLD = () => {
                         <li>Crackle</li>
                         <li>RogersOnDemand</li>
                         <li>Tubi</li>
-                        <li>FibeTV</li>
                         <li>Any mentions of streaming</li>
                     </ul>
                 </div>
@@ -64,8 +61,9 @@ const StreamLD = () => {
                 <div className={styles.submitContainer}>
                     <input type="submit" value={blockButton} onClick={changeStream}></input>
                 </div>
-            </form>
+            <form action="/">
             <button className={styles.back}>Nevermind, Take me Back!</button>
+            </form>
         </div>
 
     )

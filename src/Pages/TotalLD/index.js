@@ -6,6 +6,33 @@ const TotalLD = () => {
 
     document.body.style.backgroundColor = "white";
 
+    const [blockButton, changeButton] = useState("Block These!");
+    const totalString = "https://www.";
+
+    if (localStorage.getItem("total") === null) {
+        localStorage.setItem("total", "");
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("total") !== "") {
+            changeButton("Unblock These!");
+        } else {
+            changeButton("Block These!");
+        }
+    })
+
+    function changeStream(e) {
+        e.preventDefault();
+        if (localStorage.getItem("total") === "") {
+            localStorage.setItem("total", totalString);
+            changeButton("Unblock These!");
+        } else {
+            localStorage.setItem("total", "");
+            changeButton("Block These!");
+        }
+        window.location.href = "/";
+    }
+
     return (
         <div className={styles.starter}>
             <form action="/">
@@ -18,12 +45,12 @@ const TotalLD = () => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value="Block Everything!"></input>
+                    <input type="submit" value={blockButton} onClick={changeStream}></input>
                 </div>
             </form>
-
+            <form action="/">
             <button className={styles.back}>Nevermind, Take me Back!</button>
-            
+            </form>
         </div>
 
     )

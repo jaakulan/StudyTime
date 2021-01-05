@@ -37,9 +37,12 @@ const Websites = () => {
       changeInput("");
     }
 
+    function goBack(){
+      window.location.href = "/";
+    }
+
     return (
         <div className={styles.starter}>
-          <form action="/">
             <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
             <h1 className={styles.header}>StudyTime</h1>
             <hr className={styles.headerBreak}></hr>
@@ -57,10 +60,9 @@ const Websites = () => {
             </div>
 
             <div className={styles.submitContainer}>
-              <input type="submit" value="Block these!"></input>
+              <input type="submit" value="Block these!" onClick={goBack}>Block these!</input>
             </div>
-            </form>
-            <button className={styles.back}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={goBack}>Nevermind, Take me Back!</button>
         </div>
     )
 }

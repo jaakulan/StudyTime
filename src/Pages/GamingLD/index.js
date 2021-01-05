@@ -8,7 +8,7 @@ const GamingLD = () => {
     document.body.style.backgroundColor = "white";
 
     const [blockButton, changeButton] = useState("Block These!");
-    const gamingString = "gaming,game,games,Gaming,Games,Game";
+    const gamingString = "gaming,game,games,Gaming,Games,Game,https://www.origin.com/,https://store.steampowered.com/,https://www.ea.com/en-ca,https://www.blizzard.com/en-us/";
 
     if (localStorage.getItem("gaming") === null) {
         localStorage.setItem("gaming", "");
@@ -31,10 +31,10 @@ const GamingLD = () => {
             localStorage.setItem("gaming", "");
             changeButton("Block These!");
         }
+        window.location.href = "/";
     }
     return (
         <div className={styles.starter}>
-            <form action="/">
                 <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
                 <h1 className={styles.header}>StudyTime</h1>
                 <hr className={styles.headerBreak}></hr>
@@ -57,8 +57,9 @@ const GamingLD = () => {
                 <div className={styles.submitContainer}>
                     <input type="submit" value={blockButton} onClick={changeGaming}></input>
                 </div>
-            </form>
+            <form action="/">
             <button className={styles.back}>Nevermind, Take me Back!</button>
+            </form>
         </div>
 
     )
