@@ -1,0 +1,95 @@
+.header{
+  position: relative;
+  top: 20px;
+  left:10px;
+  font-size: 30px;
+}
+
+.headerBreak{
+  padding: 1px;
+  height:2px;
+  border-width: 0;
+  color:brown;
+  background-color: brown;
+}
+
+.logo{
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.pagelogo{
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 185px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.greeting{
+  position: middle;
+  padding-top: 20px;
+  left:10px;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+.listLine {
+  border-left: 6px solid rgb(221, 221, 221);
+  padding:10px;
+  margin-left: 40px;
+}
+
+.blocked{
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+ul li{
+  padding: 5px 0px;
+}
+.submitContainer{
+  float: left;
+  padding-left: 5px;
+  padding-top: 15px;
+}
+
+input[type=submit] {
+  background-color: rgb(180, 43, 43);
+  color: white;
+  padding: 12px 221px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  width: 10%;
+}
+
+input[type=submit]:hover {
+  background-color: brown;
+}
+
+.back{
+  margin-left: 34%;
+  margin-top: 10px;
+  width: 40%;
+  border-radius: 25px;
+  background-color: rgb(215, 223, 215);
+}
+
+.back:hover{
+  background-color:rgb(185, 192, 185);
+}
+
+.keywords{
+
+}
+
+.websites{
+  padding-top: 40px;
+  padding-bottom: 90px;
+}

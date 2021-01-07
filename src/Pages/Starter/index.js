@@ -14,6 +14,8 @@ import socialLockdown_active from "./icons/socialLockdown_active.png";
 import streamLockdown_inactive from "./icons/streamLockdown_inactive.png";
 import streamLockdown_active from "./icons/streamLockdown_active.png";
 import chevron_right from "./icons/chevron_right.png";
+import power_on from "./icons/power_on.png";
+import power_off from "./icons/power_off.png";
 
 
 
@@ -25,6 +27,7 @@ const Starter = (props) => {
     const [socialLockdown, changeSocial] = useState(false);
     const [gameLockdown, changeGame] = useState(false);
     const [streamLockdown, changeStream] = useState(false);
+    const [blocked, changeBlocked] = useState(false);
     const [newRestriction, changeRestriction] = useState(true);
     const [preRestriction, changePreRestriction] = useState(false);
     const [keywordImage, changeKImage] = useState(keyword_inactive);
@@ -33,28 +36,18 @@ const Starter = (props) => {
     const [gamingImage, changeGImage] = useState(gamingLockdown_inactive);
     const [socialImage, changeSoImage] = useState(socialLockdown_inactive);
     const [streamImage, changeStImage] = useState(streamLockdown_inactive);
+    const [powerImage, changePowerImage] = useState(power_off);
 
     const { history } = props;
 
     document.body.style.backgroundColor = "white";
 
-    if (localStorage.getItem("stream") === null) {
-        localStorage.setItem("stream", "");
-    }
-    if (localStorage.getItem("keywords") === null) {
-        localStorage.setItem("keywords", "");
-    }
-    if (localStorage.getItem("websites") === null) {
-        localStorage.setItem("websites", "");
-    }
-    if (localStorage.getItem("gaming") === null) {
-        localStorage.setItem("gaming", "");
-    }
-    if (localStorage.getItem("total") === null) {
-        localStorage.setItem("total", "");
-    }
-    if (localStorage.getItem("social") === null) {
-        localStorage.setItem("social", "");
+    var sections = ["stream", "keywords", "websites", "gaming", "total", "social"];
+
+    for(var i=0; i<sections.length; i++){
+        if(localStorage.getItem(sections[i])===null){
+            localStorage.setItem(sections[i], "");
+        }
     }
 
     useEffect(() => {
@@ -64,8 +57,6 @@ const Starter = (props) => {
 
         if (localStorage.getItem("social") != "") {
             changeSoImage(socialLockdown_active);
-            console.log(socialImage);
-            console.log("hello");
         }
     
         if (localStorage.getItem("gaming") != "") {
@@ -83,6 +74,7 @@ const Starter = (props) => {
         if (localStorage.getItem("websites") != "") {
             changeUImage(url_active);
         }
+
     })
 
     function changingRestriction() {
@@ -117,12 +109,40 @@ const Starter = (props) => {
 
     function changingGame() {
         changeGame(!gameLockdown);
-        history.push('GamingLD');
+        history.push('/GamingLD');
     }
 
     function changingStream() {
         changeStream(!streamLockdown);
-        history.push('StreamLD');
+        history.push('/StreamLD');
+    }
+    
+    function changingBlocked() {
+        changeBlocked(!blocked);
+        history.push('/Blocked')
+    }
+
+    function changingPower() {
+        if(localStorage.getItem("power")==="true"){
+            changePowerImage(power_on);
+            document.getElementById('powerLabel').innerHTML = "Blocker is on";
+            var study = document.getElementById('studying');
+            study.innerHTML = "Stop Studying"
+            study.style.backgroundColor = "grey";
+            study.style.color = "brown";
+            study.style.font = "bold";
+            localStorage.setItem("power", "false");
+        }
+        else{
+            changePowerImage(power_off);
+            document.getElementById('powerLabel').innerHTML = "Blocker is off";
+            var study = document.getElementById('studying');
+            study.innerHTML = "Start Studying"
+            study.style.backgroundColor = "brown";
+            study.style.color = "black";
+            study.style.font = "bold";
+            localStorage.setItem("power", "true");
+        }
     }
 
     return (
@@ -153,9 +173,14 @@ const Starter = (props) => {
                <h3> Not done yet </h3>
             </div>
 
+            <div className = {styles.powerContainer}>
+                <img className={styles.powerButton} src={powerImage} alt="Power Button"></img>
+                <div id = "powerLabel" className={styles.blockerWriting}>Blocker is off</div>
+            </div>
+            
             <div className={styles.btnContainer}>
-                   <button className={styles.btnStart}>Start studying</button>
-                   <button className={styles.btnSettings}>See what's blocked so far </button>
+                   <button id="studying" className={styles.btnStart} onClick={changingPower}>Start Studying</button>
+                   <button className={styles.btnSettings} onClick={changingBlocked}>See what's blocked so far </button>
             </div>
 
         </div>

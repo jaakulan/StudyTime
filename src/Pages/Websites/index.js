@@ -60,7 +60,7 @@ const Websites = () => {
             </div>
 
             <div className={styles.submitContainer}>
-              <input type="submit" value="Block these!" onClick={goBack}>Block these!</input>
+              <input type="submit" value="Block these!" onClick={goBack}></input>
             </div>
             <button className={styles.back} onClick={goBack}>Nevermind, Take me Back!</button>
         </div>
