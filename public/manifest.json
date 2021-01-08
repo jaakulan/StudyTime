@@ -21,7 +21,8 @@
     "webNavigation",
     "storage",
     "tabs",
-    "browsingData"
+    "browsingData",
+    "activeTab"
   ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com 'sha256-VSyIC/2wps6rVHTZ8S52HMe9Ep63H/h3Vk21Fpug0zA='; object-src 'self'"
 }
