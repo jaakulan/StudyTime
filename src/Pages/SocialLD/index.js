@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import socialLockdown_active from "./icons/socialLockdown_active.png";
 
-const SocialLD = () => {
+const SocialLD = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
 
@@ -31,7 +34,11 @@ const SocialLD = () => {
             localStorage.setItem("social", "");
             changeButton("Block These!");
         }
-        window.location.href = "/";
+        history.push('/');
+    }
+
+    function takeBack() {
+        history.push('/');
     }
 
     return (
@@ -58,7 +65,7 @@ const SocialLD = () => {
                     <input type="submit" value={blockButton} onClick={changeSocial}></input>
                 </div>
             <form action="/">
-            <button className={styles.back}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={takeBack} >Nevermind, Take me Back!</button>
             </form>
         </div>
 
