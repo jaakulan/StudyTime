@@ -16,7 +16,15 @@
 }
 
 .btnContainer {
-    width: 100%;
+    padding-top: 5px;
+    width: 60%;
+    float: right;
+    padding-right: 25px;
+  }
+
+.powerContainer{
+  width:30%;
+  float: left;
 }
 
 .tabs{
@@ -63,14 +71,17 @@
  border-radius: 25px;
  padding: 15px;
  font-weight: bold;
+ outline: none;
 }
 
 .btnSettings{
- margin-left: 30%;
- margin-top: 10px;
  width: 40%;
+ margin-left:87px;
+ margin-top: 10px;
+ position: relative;
  border-radius: 25px;
  background-color: rgb(187, 187, 187);
+ outline: none;
 }
 
 .btnStart:hover{
@@ -192,4 +203,18 @@
   vertical-align: middle;
   width: 60px;
   height: 60px;
+}
+
+.powerButton{
+  float: left;
+  width: 120px;
+  height: 120px;
+  padding-left: 20px;
+  margin-top:-15px;
+}
+
+.blockerWriting{
+  font-family: Arial;
+  padding-left: 30px;
+  margin-top: 10px;
 }
