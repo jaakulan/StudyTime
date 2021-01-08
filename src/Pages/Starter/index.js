@@ -38,6 +38,9 @@ const Starter = (props) => {
 
     document.body.style.backgroundColor = "white";
 
+    if (localStorage.getItem("study") === null) {
+        localStorage.setItem("study", "");
+    }
     if (localStorage.getItem("stream") === null) {
         localStorage.setItem("stream", "");
     }
