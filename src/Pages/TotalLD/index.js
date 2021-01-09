@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { useHistory } from "react-router-dom";
 import totalLockdown_active from "./icons/totalLockdown_active.png";
 
-const TotalLD = () => {
+const TotalLD = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
 
@@ -33,6 +36,10 @@ const TotalLD = () => {
         window.location.href = "/";
     }
 
+    function takeBack() {
+        history.push('/');
+    }
+
     return (
         <div className={styles.starter}>
             <form action="/">
@@ -49,7 +56,7 @@ const TotalLD = () => {
                 </div>
             </form>
             <form action="/">
-            <button className={styles.back}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
             </form>
         </div>
 

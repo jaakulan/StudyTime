@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import blocked from "./icons/blocked.png";
 
-const Blocked = () => {
+const Blocked = (props) => {
 
     document.body.style.backgroundColor = "white";
+
+    const {history} = props;
+
+    function takeBack() {
+        history.push('/');
+    }
 
     return (
         <div className={styles.starter}>
@@ -33,7 +40,7 @@ const Blocked = () => {
                     </div>
                 </div>
             <form action="/">
-            <button className={styles.back}>Take me Back!</button>
+            <button className={styles.back} onClick={takeBack}>Take me Back!</button>
             </form>
         </div>
 

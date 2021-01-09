@@ -4,32 +4,34 @@
 
 .checklist {
     padding: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
 }
 
 .items {
-    padding: 20px;
-    width: 101%;
-    height:90px;
-    line-height: 45px;
+    width: 90%;
+    height: 20%;
+    margin-left: 6%;
+    line-height: 40px;
     text-align: left;
+    margin-top: -10px;
+    
 }
 
 .btnContainer {
-    padding-top: 5px;
     width: 60%;
     float: right;
-    padding-right: 25px;
+    padding-right: 23px;
+    margin-right: 2%;
   }
 
 .powerContainer{
   width:30%;
   float: left;
+  margin-left: -5px;
 }
 
 .tabs{
-  padding-top: 10px;
-  padding-left: 45px;
+  padding-left: 25%;
 }
 
 .tab1:hover {
@@ -42,7 +44,7 @@
 
 .tab1{
   text-align: center;
-  width: 200px;
+  width: 45%;
   padding: 0;
   line-height: 24px;
   border: none;
@@ -58,8 +60,8 @@
 
 .tab2{
   text-align: center;
-  width:200px;
-  margin-left: 10px;
+  width: 45%;
+  margin-left: 5px;
   padding: 0;
   line-height: 24px;
   border: none;
@@ -69,15 +71,17 @@
  width: 100%;
  background-color: brown;
  border-radius: 25px;
- padding: 15px;
+ margin-left: 10px;
+ padding: 10px;
  font-weight: bold;
  outline: none;
+ margin-top:-15px;
 }
 
 .btnSettings{
- width: 40%;
- margin-left:87px;
- margin-top: 10px;
+ width: 80%;
+ margin-top: 3%;
+ margin-left: 14%;
  position: relative;
  border-radius: 25px;
  background-color: rgb(187, 187, 187);
@@ -98,9 +102,9 @@
 
 .header{
     position: relative;
-    top: 20px;
+    top: 10px;
     left:10px;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .headerBreak{
@@ -113,14 +117,14 @@
 
 .logo{
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
 }
 
 .noTimer{
   float: right;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 
 .settings {
@@ -148,8 +152,8 @@
   border-width: 0;
   color:brown;
   background-color: brown;
-  width: 180px;
-  margin-left: 55px;
+  width: 34%;
+  margin-left: 25%;
 }
 
 .headerUnderlineright{
@@ -157,8 +161,8 @@
   border-width: 0;
   color:brown;
   background-color: brown;
-  width: 180px;
-  margin-right: 55px;
+  width: 34%;
+  margin-left: 60%;
 }
 
 @keyframes slideinleft {
@@ -186,7 +190,6 @@
   width: 60px;
   height: 60px;
   margin-left: -10px;
-  margin-top: -5px;
   padding-right: 15px;
 }
 
@@ -195,6 +198,7 @@
   vertical-align: middle;
   width: 40px;
   height: 40px;
+  margin-top: 10px;
   padding-right: 25px;
 }
 
@@ -207,14 +211,16 @@
 
 .powerButton{
   float: left;
-  width: 120px;
-  height: 120px;
-  padding-left: 20px;
+  width: 60px;
+  height: 60px;
+  padding-left: 37%;
   margin-top:-15px;
 }
 
 .blockerWriting{
   font-family: Arial;
-  padding-left: 30px;
+  font-size: 15px;
+  padding-left: 28%;
   margin-top: 10px;
+  
 }

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { useHistory } from "react-router-dom";
 import BlockElement from "../../Components/BlockElement"
 import url_active from "./icons/url_active.png";
 
-const Websites = () => {
+const Websites = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
 
@@ -37,9 +40,9 @@ const Websites = () => {
       changeInput("");
     }
 
-    function goBack(){
-      window.location.href = "/";
-    }
+    function takeBack() {
+      history.push('/');
+  }
 
     return (
         <div className={styles.starter}>
@@ -60,9 +63,9 @@ const Websites = () => {
             </div>
 
             <div className={styles.submitContainer}>
-              <input type="submit" value="Block these!" onClick={goBack}></input>
+              <input type="submit" value="Block these!" onClick={takeBack}></input>
             </div>
-            <button className={styles.back} onClick={goBack}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
         </div>
     )
 }

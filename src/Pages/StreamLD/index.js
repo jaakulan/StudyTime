@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import streamLockdown_active from "./icons/streamLockdown_active.png";
 
-const StreamLD = () => {
+const StreamLD = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
     
@@ -29,6 +32,10 @@ const StreamLD = () => {
             changeButton("Block These!");
         }
         window.location.href = "/";
+    }
+
+    function takeBack() {
+        history.push('/');
     }
 
     return (
@@ -62,7 +69,7 @@ const StreamLD = () => {
                     <input type="submit" value={blockButton} onClick={changeStream}></input>
                 </div>
             <form action="/">
-            <button className={styles.back}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
             </form>
         </div>
 

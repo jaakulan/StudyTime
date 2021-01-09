@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import gamingLockdown_active from "./icons/gamingLockdown_active.png";
 
 
-const GamingLD = () => {
+const GamingLD = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
 
@@ -33,6 +36,10 @@ const GamingLD = () => {
         }
         window.location.href = "/";
     }
+
+    function takeBack() {
+        history.push('/');
+    }
     return (
         <div className={styles.starter}>
                 <img src="StudyTime_icon.png" alt="logo" className={styles.logo}></img>
@@ -58,7 +65,7 @@ const GamingLD = () => {
                     <input type="submit" value={blockButton} onClick={changeGaming}></input>
                 </div>
             <form action="/">
-            <button className={styles.back}>Nevermind, Take me Back!</button>
+            <button className={styles.back} onClick={takeBack} >Nevermind, Take me Back!</button>
             </form>
         </div>
 

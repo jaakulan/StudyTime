@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import BlockElement from "../../Components/BlockElement"
 import keyword_active from "./icons/keyword_active.png";
 
 
-const Keywords = () => {
+const Keywords = (props) => {
+
+    const {history} = props;
 
     document.body.style.backgroundColor = "white";
 
@@ -38,9 +41,9 @@ const Keywords = () => {
       changeInput("");
     }
 
-    function goBack(){
-      window.location.href = "/";
-    }
+    function takeBack() {
+      history.push('/');
+  }
 
     return (
         <div className={styles.starter}>
@@ -63,9 +66,9 @@ const Keywords = () => {
             </div>
 
               <div className={styles.submitContainer}>
-               <button className={styles.block} onClick={goBack}>Block these!</button>
+               <button className={styles.block} onClick={takeBack}>Block these!</button>
               </div>
-          <button className={styles.back} onClick={goBack}>Nevermind, Take me Back!</button>
+          <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
         </div>
     )
 }
