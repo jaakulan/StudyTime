@@ -8,6 +8,8 @@
 .headerBreak{
   padding: 1px;
   height:2px;
+  width: 80%;
+  margin-right: 100px;
   border-width: 0;
   color:brown;
   background-color: brown;
@@ -19,68 +21,125 @@
   height: 70px;
 }
 
-.pagelogo{
-  padding-top: 10px;
-  width: 160px;
-  height: 160px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-left: 185px;
+input[type=submit]{
+  width: 80%;
 }
 
-.greeting{
-  position: middle;
-  padding-top: 40px;
-  padding-bottom: 30px;
-  left:10px;
-  font-size: 25px;
-  margin-left: 20px;
-}
-
-.listLine {
-  border-left: 6px solid rgb(221, 221, 221);
-  padding:10px;
-  margin-left: 40px;
-}
-
-.blocked{
-  padding-left: 20px;
-  font-size: 20px;
-}
-
-ul li{
-  padding: 5px 0px;
-}
-.submitContainer{
-  float: left;
+.queryContainer{
   padding-left: 10px;
-  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-input[type=submit] {
+input[type=text]:focus {
+  transition: none;
+}
+
+input[type=text], select {
+  width: 80%;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.block{
   background-color: rgb(180, 43, 43);
   color: white;
-  padding: 12px 221px;
+  padding: 15px;
+  width: 80%;
+  margin-left: 8%;
+  margin-top: 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
-  width: 10%;
+}
+.blocked{
+  margin-top: 20px;
 }
 
-input[type=submit]:hover {
+.block:hover {
   background-color: brown;
 }
 
 .back{
-  margin-left: 36%;
-  margin-top: 10px;
+  margin-left: 28%;
+  margin-top: 5px;
   width: 40%;
   border-radius: 25px;
   background-color: rgb(215, 223, 215);
+  margin-bottom: 10px;
 }
 
 .back:hover{
   background-color:rgb(185, 192, 185);
 }
+
+.pagelogo{
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-left: 35%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+.addBtn{
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  width: 40%;
+  border-radius: 25px;
+  background-color: rgb(215, 223, 215);
+}
+
+.addBox{
+  width: 100%;
+}
+ul{
+  list-style-type: none;
+  padding-right: 10px;
+}
+
+ul li {
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  float: right;
+  width: 100%;
+
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.instructions{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 15px;
+  padding-top: 20px;
+  margin-bottom: 5%;
+}
+

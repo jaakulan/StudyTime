@@ -50,6 +50,7 @@ const Websites = (props) => {
             <h1 className={styles.header}>StudyTime</h1>
             <hr className={styles.headerBreak}></hr>
             <img src={url_active} alt="logo" className={styles.pagelogo}></img>
+            <div className={styles.instructions}>Please enter all websites you want blocked using comma's or whitespaces to seperate them:</div>
             <div className={styles.queryContainer}>
               <div className="addBox">
                 <input type="text" id="myInput" onChange={toggleInputChange} placeholder="Enter words here..."></input>
@@ -63,7 +64,7 @@ const Websites = (props) => {
             </div>
 
             <div className={styles.submitContainer}>
-              <input type="submit" value="Block these!" onClick={takeBack}></input>
+              <button className ={styles.block} type="submit" onClick={takeBack}>Block these!</button>
             </div>
             <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
         </div>

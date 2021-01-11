@@ -171,6 +171,7 @@ const Starter = (props) => {
             <div className={`${styles.preRestrictionStyle} ${preRestriction ? styles.showright : styles.noShow}`}>
                <hr className={styles.headerUnderlineright}></hr>
                <h3> Not done yet </h3>
+               <div className={styles.holder}></div>
             </div>
 
             <div className = {styles.powerContainer}>

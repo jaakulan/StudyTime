@@ -45,7 +45,7 @@ const StreamLD = (props) => {
                 <hr className={styles.headerBreak}></hr>
                 <img src={streamLockdown_active} alt="logo" className={styles.pagelogo}></img>
                 <div className={styles.greetingContainer}>
-                    <h1 className={styles.greeting}>The following streaming websites will be blocked:</h1>
+                    <h1 className={styles.instructions}>The following streaming websites will be blocked:</h1>
                 </div>
 
                 <div className={styles.listLine}>
@@ -66,7 +66,7 @@ const StreamLD = (props) => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value={blockButton} onClick={changeStream}></input>
+                    <button className={styles.block} type="submit" value={blockButton} onClick={changeStream}>{blockButton}</button>
                 </div>
             <form action="/">
             <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>

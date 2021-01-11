@@ -20,7 +20,6 @@ const Keywords = (props) => {
 
     function toggleInputChange(e) {
       changeInput(e.target.value);
-      console.log(inputWord);
     }
 
     function addElement(e) {
@@ -51,10 +50,10 @@ const Keywords = (props) => {
             <h1 className={styles.header}>StudyTime</h1>
             <hr className={styles.headerBreak}></hr>
             <img src={keyword_active} alt="logo" className={styles.pagelogo}></img>
-            <h2>Any keywords entered here will block websites which contain them. Please enter all keywords you want blocked using comma's or whitespaces to seperate them:</h2>
+            <div className={styles.instructions}>Any keywords entered here will block websites which contain them. Please enter all keywords you want blocked using comma's or whitespaces to seperate them:</div>
             <div id="queryContainer" className = {styles.queryContainer}>
               <div className="addBox">
-                <input type="text" id="myInput" onChange={toggleInputChange} placeholder="Enter words here..."></input>
+                <input type="text" className={styles.notransition} onChange={toggleInputChange} placeholder="Enter words here..."></input>
                 <button onClick={addElement} className={styles.addBtn}>Add this</button>
               </div>
 
