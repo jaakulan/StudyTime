@@ -34,7 +34,7 @@ const GamingLD = (props) => {
             localStorage.setItem("gaming", "");
             changeButton("Block These!");
         }
-        window.location.href = "/";
+        history.push('/');
     }
 
     function takeBack() {

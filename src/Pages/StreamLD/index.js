@@ -31,7 +31,7 @@ const StreamLD = (props) => {
             localStorage.setItem("stream", "");
             changeButton("Block These!");
         }
-        window.location.href = "/";
+        history.push('/');
     }
 
     function takeBack() {

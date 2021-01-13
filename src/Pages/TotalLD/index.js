@@ -33,7 +33,7 @@ const TotalLD = (props) => {
             localStorage.setItem("total", "");
             changeButton("Block These!");
         }
-        window.location.href = "/";
+        history.push('/');
     }
 
     function takeBack() {
