@@ -48,11 +48,12 @@ const TotalLD = (props) => {
                 <hr className={styles.headerBreak}></hr>
                 <img src={totalLockdown_active} alt="logo" className={styles.pagelogo}></img>
                 <div className={styles.greetingContainer}>
-                    <h1 className={styles.greeting}>Warning! All websites using on the Chrome web browser will be blocked!</h1>
+                    <h1 className={styles.instructions}>Warning!</h1>
+                    <h1 className={styles.instructions}>All websites using on the Chrome web browser will be blocked!</h1>
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value={blockButton} onClick={changeStream}></input>
+                    <button className ={styles.block} type="submit" value={blockButton} onClick={changeStream}>{blockButton}</button>
                 </div>
             </form>
             <form action="/">

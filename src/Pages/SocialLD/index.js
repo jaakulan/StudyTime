@@ -48,7 +48,7 @@ const SocialLD = (props) => {
                 <hr className={styles.headerBreak}></hr>
                 <img src={socialLockdown_active} alt="logo" className={styles.pagelogo}></img>
                 <div className={styles.greetingContainer}>
-                    <h1 className={styles.greeting}>The following social media websites will be blocked:</h1>
+                    <h1 className={styles.instructions}>The following social media websites will be blocked:</h1>
                 </div>
 
                 <div className={styles.listLine}>
@@ -62,7 +62,7 @@ const SocialLD = (props) => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value={blockButton} onClick={changeSocial}></input>
+                    <button className={styles.block} type="submit" value={blockButton} onClick={changeSocial}>{blockButton}</button>
                 </div>
             <form action="/">
             <button className={styles.back} onClick={takeBack} >Nevermind, Take me Back!</button>
