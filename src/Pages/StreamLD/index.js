@@ -66,7 +66,7 @@ const StreamLD = (props) => {
                 </div>
 
                 <div className={styles.submitContainer}>
-                    <input type="submit" value={blockButton} onClick={changeStream}></input>
+                    <button type="submit" value={blockButton} onClick={changeStream}>{blockButton}</button>
                 </div>
             <form action="/">
             <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>

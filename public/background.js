@@ -28,6 +28,7 @@ findAllURL = function changeAllURL(text){
 }
 
 chrome.webNavigation.onCompleted.addListener(function() {
+  console.log(localStorage.getItem("stream"));
   if (localStorage.getItem("stream") !== "") {
     const stream = localStorage.getItem("stream").split(",");
     const current = window.location.href;
