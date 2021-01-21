@@ -28,8 +28,9 @@ findAllURL = function changeAllURL(text){
 }
 
 chrome.webNavigation.onCompleted.addListener(function() {
+  console.log("Hello");
   console.log(localStorage.getItem("stream"));
-  if (localStorage.getItem("stream") !== "") {
+  /*if (localStorage.getItem("stream") !== "") {
     const stream = localStorage.getItem("stream").split(",");
     const current = window.location.href;
     const length = stream.length;
@@ -39,5 +40,5 @@ chrome.webNavigation.onCompleted.addListener(function() {
         findAllURL(current);
       }
     }
-  }
+  }*/
 }, {url: [{urlMatches : '.*'}]});

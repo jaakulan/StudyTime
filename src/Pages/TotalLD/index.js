@@ -1,3 +1,5 @@
+/* global chrome */
+
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { useHistory } from "react-router-dom";
@@ -22,6 +24,9 @@ const TotalLD = (props) => {
         } else {
             changeButton("Block These!");
         }
+        chrome.storage.sync.set({test: "nicetest"}, function() {
+            console.log("this is a test");
+        });
     })
 
     function changeStream(e) {
