@@ -11,11 +11,15 @@ findString = function findText(text) {
   
   //BLOCK THE PARTIAL DOMAINS
   findURL = function changeURL(text){
+    chrome.storage.local.get('tester', function(result) {
+      console.log(result.tester);
+    });
     var current = window.location.href;
-    if(current === text){
+    /*if(current === text){
       window.location.replace("https://www.google.co.in");
     }
     console.log(localStorage.getItem("social"));
+    */
   }
   
   //BLOCK THE ENTIRE DOMAIN WITH THE FOLLOWING FUNCTION
@@ -31,4 +35,4 @@ findString = function findText(text) {
   
   
   findURL("https://www.quora.com/");
-  findAllURL("https://www.facebook.com/");
+  //findAllURL("https://www.facebook.com/");

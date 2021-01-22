@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
@@ -16,6 +17,7 @@ import streamLockdown_active from "./icons/streamLockdown_active.png";
 import chevron_right from "./icons/chevron_right.png";
 import power_on from "./icons/power_on.png";
 import power_off from "./icons/power_off.png";
+import { mdiGoogleChrome } from "@mdi/js";
 
 
 
@@ -49,6 +51,8 @@ const Starter = (props) => {
             localStorage.setItem(sections[i], "");
         }
     }
+
+    chrome.storage.local.set({'tester': 'nice'});
 
     useEffect(() => {
         if (localStorage.getItem("keywords") != "") {
