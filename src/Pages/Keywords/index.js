@@ -12,7 +12,7 @@ const Keywords = (props) => {
     document.body.style.backgroundColor = "white";
 
     if (localStorage.getItem("keywords") === null) {
-      localStorage.setItem("keywords",[]);
+      localStorage.setItem("keywords","");
     }
 
     const [keywordArray, changeKeywords] = useState(localStorage.getItem("keywords").split(","));
@@ -20,6 +20,7 @@ const Keywords = (props) => {
 
     function toggleInputChange(e) {
       changeInput(e.target.value);
+      console.log(inputWord);
     }
 
     function addElement(e) {
@@ -40,9 +41,18 @@ const Keywords = (props) => {
       changeInput("");
     }
 
+    function sendKeywords(e){
+      if (localStorage.getItem("keywords") == "") {
+        
+      
+    } else {
+    }
+      takeBack();
+    }
+
     function takeBack() {
       history.push('/');
-  }
+    }
 
     return (
         <div className={styles.starter}>
@@ -63,9 +73,8 @@ const Keywords = (props) => {
                 )}
               </div>
             </div>
-
               <div className={styles.submitContainer}>
-               <button className={styles.block} onClick={takeBack}>Block these!</button>
+               <button className={styles.block} onClick={sendKeywords}>Block these!</button>
               </div>
           <button className={styles.back} onClick={takeBack}>Nevermind, Take me Back!</button>
         </div>

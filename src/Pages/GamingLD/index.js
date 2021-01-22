@@ -34,7 +34,7 @@ const GamingLD = (props) => {
             localStorage.setItem("gaming", "");
             changeButton("Block These!");
         }
-        history.push('/');
+        takeBack();
     }
 
     function takeBack() {
